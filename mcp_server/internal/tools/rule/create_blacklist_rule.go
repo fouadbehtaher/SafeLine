@@ -25,7 +25,7 @@ func (t *CreateBlacklistRule) Description() string {
 }
 
 func (t *CreateBlacklistRule) Validate(params CreateBlacklistRuleParams) error {
-	return nil
+	return validateRuleParams(params.Name, params.IP, params.URINoQuery)
 }
 
 func (t *CreateBlacklistRule) Execute(ctx context.Context, params CreateBlacklistRuleParams) (int64, error) {
