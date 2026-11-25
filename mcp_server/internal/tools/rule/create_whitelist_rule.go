@@ -25,7 +25,7 @@ func (t *CreateWhitelistRule) Description() string {
 }
 
 func (t *CreateWhitelistRule) Validate(params CreateWhitelistRuleParams) error {
-	return nil
+	return validateRuleParams(params.Name, params.IP, params.URINoQuery)
 }
 
 func (t *CreateWhitelistRule) Execute(ctx context.Context, params CreateWhitelistRuleParams) (int64, error) {
